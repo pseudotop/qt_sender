@@ -26,6 +26,9 @@ public slots:
     void on_btnBrowse_clicked();
     void on_btnApply_clicked();
 
+private slots:
+    void on_btnCopy_clicked();
+
 private:
     void createFilesTable(QTableWidget *table);
     void showFiles(const QStringList &files);

@@ -62,7 +62,7 @@ void Widget::on_btnBrowse_clicked()
 {
     QString directory=QFileDialog::getExistingDirectory(
                 this,
-                tr("&Browse..."),
+                tr("Browse..."),
                 "",
                 QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks
                 );
@@ -100,4 +100,17 @@ void Widget::showFiles(const QStringList &files)
         ui->tableWidget->setItem(row, 0, fileNameItem);
         ui->tableWidget->setItem(row, 1, sizeItem);
     }
+}
+
+void Widget::on_btnCopy_clicked()
+{
+    QString i = ui->lineEdit->text();
+    if (i.indexOf("\\") > 0){
+        i=i.replace(QString("\\"),QString("/")).section("/",1,-1);
+        i=QString("http://192.168.0.255/").append(i);
+    }
+
+    udpSocket = new QUdpSocket(this);
+    QByteArray datagram = i.toUtf8();
+    udpSocket->writeDatagram(datagram.data(), datagram.size(), QHostAddress::Broadcast, 54322);
 }

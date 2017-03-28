@@ -16,9 +16,9 @@
   <widget class="QPushButton" name="btnApply">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>250</y>
-     <width>241</width>
+     <x>160</x>
+     <y>260</y>
+     <width>191</width>
      <height>31</height>
     </rect>
    </property>
@@ -60,6 +60,19 @@
      <width>241</width>
      <height>192</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnCopy">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>260</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&amp;Copy</string>
    </property>
   </widget>
  </widget>
